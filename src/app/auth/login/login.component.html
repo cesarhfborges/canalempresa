@@ -1,1 +1,30 @@
-<p>login works!</p>
+<div class="row">
+  <div class="col-md-4 mx-auto">
+
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="email">E-Mail</span>
+            </div>
+            <input type="text" class="form-control" placeholder="E-Mail" aria-label="E-Mail" aria-describedby="email" formControlName="email">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="password">Senha</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Senha" aria-label="Senha" aria-describedby="password" formControlName="password">
+          </div>
+
+          <button type="submit" class="btn btn-success">Login</button>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>

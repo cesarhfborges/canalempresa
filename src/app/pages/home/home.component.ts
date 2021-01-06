@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AngularFirestore} from '@angular/fire/firestore';
+import {Loja} from '../../shared/models/loja';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  lojas: Loja[];
 
-  ngOnInit(): void {
+  constructor(
+    private firebase: AngularFirestore,
+  ) {
   }
 
+  ngOnInit(): void {
+    this.getLojas();
+  }
+
+  getLojas() {
+    this.firebase.collection('/lojas').valueChanges().subscribe(
+      (lojas: Loja[]) => {
+        // console.log(lojas);
+        this.lojas = lojas;
+      }
+    );
+  }
 }

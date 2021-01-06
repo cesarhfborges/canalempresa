@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "canalempresa-1d15f": {
+      "hosting": {
+        "frontend": [
+          "canalempresa-1d15f"
+        ]
+      }
+    }
+  }
+}
